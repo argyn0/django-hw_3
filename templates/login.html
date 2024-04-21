@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a href="{% url 'home' %}">Home</a>
+    <h1>Log in</h1>
+    <form action="{% url 'home' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username">
+        <br>
+        <input type="text" name="email" placeholder="Email">
+        <br>
+        <input type="text" name="password" placeholder="Password">
+        <br>
+        <button type="submit">Log in</button>
+    </form>
+{% endblock %}
